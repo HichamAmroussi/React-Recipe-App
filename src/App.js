@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+//Import Components
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar";
+import Home from './Components/pages/Home';
+import Search from './Components/pages/Search';
+import Favorites from './Components/pages/Favorites';
 
-function App() {
+function App() { 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [favoriteMeals, setFavoriteMeals] = useState([]);
+  const [sentForm, setSentForm] = useState(false);
+
+  useEffect(() => {
+    getLocalFavMeals();
+  }, [])
+
+  useEffect(() => {
+    saveLocalFavMeals();
+  }, [favoriteMeals])
+
+  //Functions
+  const saveLocalFavMeals = () => {
+    localStorage.setItem('favMeals', JSON.stringify(favoriteMeals));
+  }
+
+  const getLocalFavMeals = () => {
+    if(localStorage.getItem('favMeals')) {
+      const localFavMeals = JSON.parse(localStorage.getItem('favMeals'));
+      setFavoriteMeals(localFavMeals);
+    } else {
+      const localFavMeals = [];
+      setFavoriteMeals(localFavMeals);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} sentForm={sentForm} setSentForm={setSentForm} />
+        <Sidebar favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />
+        <Routes>
+          <Route path="/" exact element={<Home favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
+          <Route path="/search" element={<Search searchTerm={searchTerm} sentForm={sentForm} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
+          <Route path="/favorites" element={<Favorites favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
