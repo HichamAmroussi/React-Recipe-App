@@ -8,9 +8,7 @@ import Search from './Components/pages/Search';
 import Favorites from './Components/pages/Favorites';
 
 function App() { 
-  const [searchTerm, setSearchTerm] = useState("");
   const [favoriteMeals, setFavoriteMeals] = useState([]);
-  const [sentForm, setSentForm] = useState(false);
 
   useEffect(() => {
     getLocalFavMeals();
@@ -38,11 +36,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} sentForm={sentForm} setSentForm={setSentForm} />
+        <Navbar />
         <Sidebar favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />
         <Routes>
-          <Route path="/" exact element={<Home favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />} />
-          <Route path="/search" element={<Search searchTerm={searchTerm} sentForm={sentForm} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
+          <Route path="/" exact element={<Home favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
+          <Route path="/search/:term" element={<Search favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
           <Route path="/favorites" element={<Favorites favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} />} />
         </Routes>
       </div>

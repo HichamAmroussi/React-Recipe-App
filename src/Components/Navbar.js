@@ -1,14 +1,15 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = ({ searchTerm, setSearchTerm, sentForm, setSentForm }) => {
+const Navbar = () => {
+    const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if(searchTerm) {
-            setSentForm(!sentForm);
-            navigate('/search');
+            navigate('/search/' + searchTerm);
         }
     }
 
