@@ -71,7 +71,7 @@ body {
 
 @media (max-width: 480px) {
   .search-container {
-    padding: 1.9rem 0.7rem;
+    padding: 1.5rem 0.7rem;
   }
   .search-bar input, .search-bar button {
     font-size: 0.8rem;
@@ -152,13 +152,14 @@ body {
   .website-name {
     top: 29px;
     left: 2vw;
-    width: 137px;
+    width: 113px;
+    padding: 0.5rem 0.4rem;
   }
   .website-name h1 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .website-name .fa-solid {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -216,7 +217,10 @@ body {
   border: none;
   background-color: transparent;
   font-size: 2rem;
-  color: #8ea3df;
+  color: #fff;
+  background-color: #8ea3df;
+  padding: 0.1rem 0.5rem;
+  border-radius: 50px;
   display: none;
 }
 
@@ -327,11 +331,18 @@ body {
 .home {
   max-width: 100%;
   width: 1000px;
+  min-height: 80vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .home {
+    justify-content: flex-start;
+  }
 }
 
 .title {
@@ -542,8 +553,8 @@ body {
 
 @media (max-width: 800px) {
   .search .search-result-container {
-    grid-template-columns: repeat(2, 37vw);
-    grid-gap: 2.4vh 5vw;
+    grid-template-columns: repeat(2, 40vw);
+    grid-gap: 1.5vh 3.8vw;
   }
 }
 
