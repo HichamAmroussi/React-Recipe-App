@@ -18,8 +18,8 @@ const Popup = ({ open, meal, onClose }) => {
     if(!open) return null;
     return ReactDOM.createPortal( 
         <div className="popup-container" onClick={onClose}>
-            <button title="Click to Close Popup" className="remove-popup" onClick={onClose}><i className="fas fa-remove"></i></button>
             <div className="popup" onClick={(e) => e.stopPropagation()}>
+            <button title="Click to Close Popup" className="remove-popup" onClick={onClose}><i className="fas fa-remove"></i></button>
                 <h1 className="meal-title">{meal.strMeal}</h1>
                 <img
                     src={meal.strMealThumb}
