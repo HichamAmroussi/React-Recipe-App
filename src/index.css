@@ -519,7 +519,7 @@ body {
   .search .search-result-container {
     margin-top: 2vh;
     margin-bottom: 10vh;
-    padding: 2.5rem 0;
+    padding: 1.1rem 0;
     width: 95%;
   }
 }
@@ -547,8 +547,8 @@ body {
 
 @media (max-width: 800px) {
   .search .search-result-container {
-    grid-template-columns: repeat(2, 40vw);
-    grid-gap: 1.5vh 4.1vw;
+    grid-template-columns: repeat(2, 41vw);
+    grid-gap: 1.5vh 4vw;
   }
 }
 
