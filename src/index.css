@@ -53,7 +53,7 @@ body {
 
 @media (max-width: 1350px) {
   .search-bar input {
-    width: 40vw;
+    width: 45vw;
   }
 }
 
@@ -71,7 +71,7 @@ body {
 
 @media (max-width: 480px) {
   .search-container {
-    padding: 1.5rem 0.7rem;
+    padding: 1.2rem 0.7rem;
   }
   .search-bar input, .search-bar button {
     font-size: 0.8rem;
@@ -150,9 +150,9 @@ body {
 
 @media (max-width: 480px) {
   .website-name {
-    top: 29px;
+    top: 23px;
     left: 2vw;
-    width: 113px;
+    width: 112px;
     padding: 0.5rem 0.4rem;
   }
   .website-name h1 {
@@ -331,18 +331,12 @@ body {
 .home {
   max-width: 100%;
   width: 1000px;
-  min-height: 80vh;
+  min-height: 87vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 480px) {
-  .home {
-    justify-content: flex-start;
-  }
+  justify-content: flex-start;
 }
 
 .title {
@@ -554,7 +548,7 @@ body {
 @media (max-width: 800px) {
   .search .search-result-container {
     grid-template-columns: repeat(2, 40vw);
-    grid-gap: 1.5vh 3.8vw;
+    grid-gap: 1.5vh 4.1vw;
   }
 }
 

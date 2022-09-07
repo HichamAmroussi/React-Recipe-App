@@ -42,7 +42,7 @@ const Sidebar = ({ favoriteMeals, setFavoriteMeals }) => {
                                                  : ""
                     }
                     <button className="show-menu-btn" onClick={handeClick}>
-                        <i className="fa-solid fa-angle-down"></i>
+                        <i className={`fa-solid ${button? "fa-angle-down" : "fa-angle-up"}`}></i>
                     </button>
                 </ul>
             </aside>
