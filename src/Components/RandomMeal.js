@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css/sea-green';
 //Components
 import Popup from "./Popup";
 
-const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals }) => { 
+const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals, setTips }) => { 
     const favoriteMealIds = [];
     favoriteMeals.forEach(favoriteMeal => favoriteMealIds.push(favoriteMeal.idMeal))
     const [ favorite, setFavorite ] = useState(false);
@@ -16,6 +16,8 @@ const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals }) => {
 
     const handleClick = (e) => {
         e.stopPropagation();
+
+        setTips(1);
         
         if(favoriteMealIds.includes(meal.idMeal)) {
             setFavorite(false);
