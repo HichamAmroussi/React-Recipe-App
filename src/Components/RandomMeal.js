@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SplideSlide } from "@splidejs/react-splide";
-import '@splidejs/react-splide/css/sea-green';
+import '@splidejs/splide/css';
 //Components
 import Popup from "./Popup";
 
@@ -11,13 +11,17 @@ const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals, setTips }) => {
     const [ isOpen, setIsOpen ] = useState(false);
 
     useEffect(() => {
+        if(favoriteMeals.length === 1) {
+            setTips(1);
+        }
+    }, [favoriteMeals])
+
+    useEffect(() => {
         setFavorite(favoriteMealIds.includes(meal.idMeal));
     })
 
     const handleClick = (e) => {
         e.stopPropagation();
-
-        setTips(1);
         
         if(favoriteMealIds.includes(meal.idMeal)) {
             setFavorite(false);
