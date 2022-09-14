@@ -50,7 +50,7 @@ const Home = ({ favoriteMeals, setFavoriteMeals }) => {
                             } }
                         >
                             {trendingMeals.map((meal) => (
-                                <RandomMeal meal={meal} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} setTips={setTips} key={meal.idMeal} />
+                                <RandomMeal meal={meal} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} tips={tips} setTips={setTips} key={meal.idMeal} />
                             ))}
                         </Splide>
                     }
@@ -78,7 +78,7 @@ const Home = ({ favoriteMeals, setFavoriteMeals }) => {
                             } }
                         >
                             {randomMeals.map((meal) => (
-                                <RandomMeal meal={meal} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} setTips={setTips} key={meal.idMeal} />
+                                <RandomMeal meal={meal} favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} tips={tips} setTips={setTips} key={meal.idMeal} />
                             ))}
                         </Splide>
                     }

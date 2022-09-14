@@ -4,14 +4,14 @@ import '@splidejs/splide/css';
 //Components
 import Popup from "./Popup";
 
-const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals, setTips }) => { 
+const RandomMeal = ({ meal, favoriteMeals, setFavoriteMeals, tips, setTips }) => { 
     const favoriteMealIds = [];
     favoriteMeals.forEach(favoriteMeal => favoriteMealIds.push(favoriteMeal.idMeal))
     const [ favorite, setFavorite ] = useState(false);
     const [ isOpen, setIsOpen ] = useState(false);
 
     useEffect(() => {
-        if(favoriteMeals.length === 1) {
+        if(favoriteMeals.length === 1 && tips === 0) {
             setTips(1);
         }
     }, [favoriteMeals])
