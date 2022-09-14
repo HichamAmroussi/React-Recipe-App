@@ -55,7 +55,7 @@ const Sidebar = ({ favoriteMeals, setFavoriteMeals }) => {
                         <FavoriteMeal favoriteMeals={favoriteMeals} setFavoriteMeals={setFavoriteMeals} favoriteMeal={favoriteMeal} key={favoriteMeal.idMeal} />
                     ))}
                     {
-                        favoriteMeals.length > 5 ? <button className="show-more" onClick={() => navigate('/favorites')}><i className="fa-solid fa-ellipsis"></i></button> 
+                        favoriteMeals.length > displayedMeals.length ? <button className="show-more" onClick={() => navigate('/favorites')}><i className="fa-solid fa-ellipsis"></i></button> 
                                                  : ""
                     }
                     <button className="show-menu-btn" onClick={handeClick}>
