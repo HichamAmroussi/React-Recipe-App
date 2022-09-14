@@ -838,6 +838,13 @@ body {
   border-radius: 100vw;
 }
 
+@supports (scrollbar-color: red blue) {
+  .popup-container .popup {
+      scrollbar-color: rgb(118, 180, 238) #d1d1d1;
+      scrollbar-width: thin;
+  }
+}
+
 @media (max-width: 1025px) {
   .popup-container .popup img {
     max-width: 800px;
