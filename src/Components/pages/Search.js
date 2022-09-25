@@ -12,10 +12,16 @@ const Search = ({favoriteMeals, setFavoriteMeals }) => {
           .then(respData => {
             setMeals(respData.meals);
           })
+          .catch((err) => console.log(err))
     }, [term])
 
     return (
         <div className="search">
+            { !meals &&
+                <div className="no-result-container">
+                    <p className="nothing-found">No meals found.</p>
+                </div>
+            }
             { meals &&
                 <div className="search-result-container">
                     {meals.map((meal) => (

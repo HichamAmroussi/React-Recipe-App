@@ -11,8 +11,10 @@ const Home = ({ favoriteMeals, setFavoriteMeals }) => {
     const [ tips, setTips ] = useState(0);
 
     useEffect(() => {  
-        if(JSON.parse(localStorage.getItem('favMeals')).length !== 0) {
-            setTips(2);
+        if(localStorage.getItem('favMeals')) {
+            if(JSON.parse(localStorage.getItem('favMeals')).length !== 0) {
+                setTips(2);
+            }
         }
     }, [])
 
